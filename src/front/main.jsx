@@ -27,3 +27,15 @@ const Main = () => {
 
 // Render the Main component into the root DOM element.
 ReactDOM.createRoot(document.getElementById('root')).render(<Main />)
+
+
+
+const router = createRoutesFromElements(routes);
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+    <React.StrictMode>
+        <BrowserRouter>
+            <RouterProvider router={router} />
+        </BrowserRouter>
+    </React.StrictMode>
+);

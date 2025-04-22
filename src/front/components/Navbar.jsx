@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import { useAuth } from '../hooks/useAuth';
 
 export const Navbar = () => {
+	const { isAuthenticated, logout } = useAuth();
 
 	return (
 		<nav className="navbar navbar-light bg-light">
@@ -13,6 +15,9 @@ export const Navbar = () => {
 						<button className="btn btn-primary">Check the Context in action</button>
 					</Link>
 				</div>
+				{isAuthenticated() && (
+                <button onClick={logout}>Cerrar Sesión</button>
+            	)}
 			</div>
 		</nav>
 	);
